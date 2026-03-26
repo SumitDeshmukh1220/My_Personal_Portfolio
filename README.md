@@ -31,6 +31,9 @@
 
 I'm **Sumit Deshmukh**, an aspiring **Data Analyst** and Developer with hands-on experience in real-world datasets, dashboards, and backend systems. Currently pursuing my Master of Computer Science, I'm passionate about turning raw data into meaningful insights and building clean, functional digital experiences.
 
+-----**ABOUT PAGE**-----
+![image altr](https://github.com/SumitDeshmukh1220/My_Personal_Portfolio/blob/4da036dd4698acc105cdeea5e5d6702767a556de/About.png)
+
 - 🎓 MCS @ MIT Arts, Commerce & Science College, Alandi (2024–2026)
 - 💼 Data Analyst Intern @ MaxGen Technologies Pvt. Ltd. (Mar–Apr 2025)
 - 📍 Pune, Maharashtra, India
