@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sumit Deshmukh — Data Analyst & Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/6fdbcab362.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+    <div class="noise"></div>
+
+    <div class="loader" id="loader">
+      <div class="loader-inner">
+        <div class="loader-line"></div>
+        <span class="loader-text">LOADING</span>
+        <span class="loader-percent" id="loader-percent">0%</span>
+      </div>
+    </div>
+
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-r">S</span>umit<span class="logo-dot">.</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" class="nav-link active" data-num="01">Home</a></li>
+          <li><a href="about.html" class="nav-link" data-num="02">About</a></li>
+          <li><a href="services.html" class="nav-link" data-num="03">Services</a></li>
+          <li><a href="work.html" class="nav-link" data-num="04">Work</a></li>
+          <li><a href="contact.html" class="nav-link" data-num="05">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="index.html" class="mob-link" onclick="closeMenu()"><span>01</span> Home</a></li>
+        <li><a href="about.html" class="mob-link" onclick="closeMenu()"><span>02</span> About</a></li>
+        <li><a href="services.html" class="mob-link" onclick="closeMenu()"><span>03</span> Services</a></li>
+        <li><a href="work.html" class="mob-link" onclick="closeMenu()"><span>04</span> Work</a></li>
+        <li><a href="contact.html" class="mob-link" onclick="closeMenu()"><span>05</span> Contact</a></li>
+      </ul>
+    </div>
+
+    <section id="home" class="hero">
+      <div class="hero-bg">
+        <img src="images/sumitbackground.png" alt="" class="hero-bg-img desktop-bg" />
+        <img src="images/sumitbackground.png" alt="" class="hero-bg-img mobile-bg" />
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-tag reveal-up">
+          <span class="tag-line"></span>
+          <span>Data Engineer &amp; Data Analyst</span>
+          <span class="tag-line"></span>
+        </div>
+        <h1 class="hero-title reveal-up" data-delay="100">
+          Hi, I'm<br />
+          <span class="hero-name">Sumit<br />Deshmukh</span>
+        </h1>
+        <p class="hero-sub reveal-up" data-delay="200">
+          Data Engineer skilled in Python, SQL, and Power BI, building data-driven solutions
+        </p>
+        <div class="hero-cta reveal-up" data-delay="300">
+          <a href="work.html" class="btn-primary">View My Work</a>
+          <a href="contact.html" class="btn-ghost">Let's Talk</a>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        <span>SCROLL</span>
+      </div>
+      <div class="hero-stats">
+        <div class="stat reveal-right" data-delay="200">
+          <span class="stat-num" data-target="3">0</span>+
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat reveal-right" data-delay="300">
+          <span class="stat-num" data-target="1">0</span>
+          <span class="stat-label">Internship</span>
+        </div>
+        <div class="stat reveal-right" data-delay="400">
+          <span class="stat-num" data-target="5">0</span>+
+          <span class="stat-label">Skills</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <a href="index.html" class="footer-logo">Sumit<span>.</span></a>
+        <p>© 2026 Sumit Deshmukh. Crafted with passion ✨ and precision 🧠</p>
+        <a href="#home" class="back-top" aria-label="Back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Counter animation for hero stats
+      (function initCounters() {
+        const counters = document.querySelectorAll('.stat-num');
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const target = parseInt(el.dataset.target);
+            let current = 0;
+            const step = Math.max(1, Math.floor(target / 30));
+            const timer = setInterval(() => {
+              current += step;
+              if (current >= target) { current = target; clearInterval(timer); }
+              el.textContent = current;
+            }, 50);
+            observer.unobserve(el);
+          });
+        }, { threshold: 0.5 });
+        counters.forEach(c => observer.observe(c));
+      })();
+
+      // Parallax hero background
+      (function initParallax() {
+        const heroBg = document.querySelector('.hero-bg-img');
+        if (!heroBg) return;
+        window.addEventListener('scroll', () => {
+          const y = window.scrollY;
+          if (y < window.innerHeight) heroBg.style.transform = `translateY(${y * 0.35}px)`;
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work — Sumit Deshmukh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/6fdbcab362.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+    <div class="noise"></div>
+
+    <div class="loader" id="loader">
+      <div class="loader-inner">
+        <div class="loader-line"></div>
+        <span class="loader-text">LOADING</span>
+        <span class="loader-percent" id="loader-percent">0%</span>
+      </div>
+    </div>
+
+    <nav class="nav scrolled" id="nav">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-r">S</span>umit<span class="logo-dot">.</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" class="nav-link" data-num="01">Home</a></li>
+          <li><a href="about.html" class="nav-link" data-num="02">About</a></li>
+          <li><a href="services.html" class="nav-link" data-num="03">Services</a></li>
+          <li><a href="work.html" class="nav-link active" data-num="04">Work</a></li>
+          <li><a href="contact.html" class="nav-link" data-num="05">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="index.html" class="mob-link" onclick="closeMenu()"><span>01</span> Home</a></li>
+        <li><a href="about.html" class="mob-link" onclick="closeMenu()"><span>02</span> About</a></li>
+        <li><a href="services.html" class="mob-link" onclick="closeMenu()"><span>03</span> Services</a></li>
+        <li><a href="work.html" class="mob-link" onclick="closeMenu()"><span>04</span> Work</a></li>
+        <li><a href="contact.html" class="mob-link" onclick="closeMenu()"><span>05</span> Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Page Hero Banner -->
+    <div class="page-banner">
+      <div class="container">
+        <span class="section-num">04</span>
+        <h1 class="page-banner-title">My <em>Work</em></h1>
+        <p class="page-banner-sub">Projects I've built and shipped</p>
+      </div>
+    </div>
+
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <div class="work-grid">
+          <div class="work-card reveal-up" data-delay="0">
+            <div class="work-img">
+              <img src="images/work-1.png" alt="Social Media App" />
+              <div class="work-overlay">
+                <a href="#" class="work-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+            </div>
+            <div class="work-info">
+              <span class="work-tag">Mobile App</span>
+              <h3>Social Media App</h3>
+              <p>A modern social media app designed to connect users seamlessly through intuitive UI and real-time interactions.</p>
+            </div>
+          </div>
+          <div class="work-card reveal-up" data-delay="150">
+            <div class="work-img">
+              <img src="images/work-2.png" alt="Streaming Platform" />
+              <div class="work-overlay">
+                <a href="#" class="work-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+            </div>
+            <div class="work-info">
+              <span class="work-tag">Web Platform</span>
+              <h3>Streaming Platform</h3>
+              <p>A user-friendly streaming platform built to deliver seamless on-demand content with smooth navigation.</p>
+            </div>
+          </div>
+          <div class="work-card reveal-up" data-delay="300">
+            <div class="work-img">
+              <img src="images/work-3.png" alt="Virtual Shopping Store" />
+              <div class="work-overlay">
+                <a href="#" class="work-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+            </div>
+            <div class="work-info">
+              <span class="work-tag">E-Commerce</span>
+              <h3>Virtual Shopping Store</h3>
+              <p>A modern virtual shopping store designed to provide a smooth, secure, and intuitive online experience.</p>
+            </div>
+          </div>
+        </div>
+        <div class="reveal-up" style="text-align:center;margin-top:60px;">
+          <a href="contact.html" class="btn-primary">Work With Me</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <a href="index.html" class="footer-logo">Sumit<span>.</span></a>
+        <p>© 2026 Sumit Deshmukh. Crafted with passion ✨ and precision 🧠</p>
+        <a href="#" class="back-top" aria-label="Back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Card tilt for work cards
+      (function initCardTilt() {
+        const cards = document.querySelectorAll('.work-card');
+        cards.forEach(card => {
+          card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width - 0.5) * 8;
+            const y = ((e.clientY - rect.top) / rect.height - 0.5) * 8;
+            card.style.transform = `perspective(800px) rotateY(${x}deg) rotateX(${-y}deg) translateY(-8px)`;
+          });
+          card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services — Sumit Deshmukh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/6fdbcab362.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+    <div class="noise"></div>
+
+    <div class="loader" id="loader">
+      <div class="loader-inner">
+        <div class="loader-line"></div>
+        <span class="loader-text">LOADING</span>
+        <span class="loader-percent" id="loader-percent">0%</span>
+      </div>
+    </div>
+
+    <nav class="nav scrolled" id="nav">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-r">S</span>umit<span class="logo-dot">.</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" class="nav-link" data-num="01">Home</a></li>
+          <li><a href="about.html" class="nav-link" data-num="02">About</a></li>
+          <li><a href="services.html" class="nav-link active" data-num="03">Services</a></li>
+          <li><a href="work.html" class="nav-link" data-num="04">Work</a></li>
+          <li><a href="contact.html" class="nav-link" data-num="05">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="index.html" class="mob-link" onclick="closeMenu()"><span>01</span> Home</a></li>
+        <li><a href="about.html" class="mob-link" onclick="closeMenu()"><span>02</span> About</a></li>
+        <li><a href="services.html" class="mob-link" onclick="closeMenu()"><span>03</span> Services</a></li>
+        <li><a href="work.html" class="mob-link" onclick="closeMenu()"><span>04</span> Work</a></li>
+        <li><a href="contact.html" class="mob-link" onclick="closeMenu()"><span>05</span> Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Page Hero Banner -->
+    <div class="page-banner">
+      <div class="container">
+        <span class="section-num">03</span>
+        <h1 class="page-banner-title">My <em>Services</em></h1>
+        <p class="page-banner-sub">What I can do for you</p>
+      </div>
+    </div>
+
+    <section id="services" class="services">
+      <div class="container">
+        <div class="services-grid">
+          <div class="service-card reveal-up" data-delay="0">
+            <div class="service-num">01</div>
+            <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+            <h3>Data Analysis</h3>
+            <p>Turning data into actionable insights through analysis and visualization. Hands-on experience with Python, Power BI, Excel, and SQL.</p>
+            <div class="service-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+          <div class="service-card reveal-up" data-delay="100">
+            <div class="service-num">02</div>
+            <div class="service-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+            <h3>UI/UX Design</h3>
+            <p>Crafting user-friendly interfaces that blend aesthetics with usability. Driven by research, interaction design, and thoughtful experiences.</p>
+            <div class="service-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+          <div class="service-card reveal-up" data-delay="200">
+            <div class="service-num">03</div>
+            <div class="service-icon"><i class="fa-brands fa-app-store"></i></div>
+            <h3>App Development</h3>
+            <p>Responsive web designs using HTML, CSS, and JavaScript. Emphasis on clean UI, accessibility, and cross-device compatibility.</p>
+            <div class="service-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+        </div>
+
+        <!-- CTA strip -->
+        <div class="services-cta reveal-up" data-delay="300">
+          <p>Interested in working together?</p>
+          <a href="contact.html" class="btn-primary">Get In Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <a href="index.html" class="footer-logo">Sumit<span>.</span></a>
+        <p>© 2026 Sumit Deshmukh. Crafted with passion ✨ and precision 🧠</p>
+        <a href="#" class="back-top" aria-label="Back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Card tilt for services
+      (function initCardTilt() {
+        const cards = document.querySelectorAll('.service-card');
+        cards.forEach(card => {
+          card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width - 0.5) * 8;
+            const y = ((e.clientY - rect.top) / rect.height - 0.5) * 8;
+            card.style.transform = `perspective(800px) rotateY(${x}deg) rotateX(${-y}deg) translateY(-8px)`;
+          });
+          card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+        });
+      })();
+    </script>
+  </body>
+</html>
