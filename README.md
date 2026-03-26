@@ -30,7 +30,7 @@ I'm **Sumit Deshmukh**, an aspiring **Data Analyst** and Developer with hands-on
 - 🎓 MCS @ MIT Arts, Commerce & Science College, Alandi (2024–2026)
 - 💼 Data Analyst Intern @ MaxGen Technologies Pvt. Ltd. (Mar–Apr 2025)
 - 📍 Pune, Maharashtra, India
-- 📧 sumitganeshd212@gmail.com
+- 📧 sumitganeshdeshmukh1220@gmail.com
 - 🟢 **Open to Work** — seeking entry-level Data Analyst / Developer roles
 
 ---
