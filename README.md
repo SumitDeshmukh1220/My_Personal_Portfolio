@@ -1,6 +1,10 @@
 # 🌐 Sumit Deshmukh — Personal Portfolio Website
 
 
+--**HOME PAGE**--
+![Home Screenshot](images/home.png)
+
+
 > A modern, responsive personal portfolio website showcasing my skills, projects, and professional journey as an aspiring Data Analyst & Developer.
 
 ---
