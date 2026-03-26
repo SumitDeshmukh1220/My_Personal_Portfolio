@@ -2,7 +2,7 @@
 
 
 --**HOME PAGE**--
-![Home Screenshot](images/home.png)
+![image altr](https://github.com/SumitDeshmukh1220/My_Personal_Portfolio/blob/7bfdbb03d8926d52774c47ffee7c8db6251c536c/Homepage.png)
 
 
 > A modern, responsive personal portfolio website showcasing my skills, projects, and professional journey as an aspiring Data Analyst & Developer.
