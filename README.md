@@ -5,8 +5,8 @@
 [![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-
---**HOME PAGE**--
+## 🔗 Live Demo
+## -----HOME PAGE-----
 ![image altr](https://github.com/SumitDeshmukh1220/My_Personal_Portfolio/blob/7bfdbb03d8926d52774c47ffee7c8db6251c536c/Homepage.png)
 
 
